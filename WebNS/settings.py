@@ -32,7 +32,7 @@ CSRF_TRUSTED_ORIGINS = [
     'http://127.0.0.1:8000',
     'https://do-an-dien-toan-dam-may-git-crt-20110233-dev.apps.sandbox-m2.ll9k.p1.openshiftapps.com',
 
-],
+]
 ALLOWED_HOSTS = [
     'do-an-dien-toan-dam-may-git-crt-20110233-dev.apps.sandbox-m2.ll9k.p1.openshiftapps.com',
     '127.0.0.1',
