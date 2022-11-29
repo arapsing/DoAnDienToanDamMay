@@ -27,7 +27,9 @@ SECRET_KEY = 'django-insecure-c+#n5$f67nt*nii0ep&q4u6ilc(x)!!h7delis!p4h0do4=ui!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'do-an-dien-toan-dam-may-git-crt-20110233-dev.apps.sandbox-m2.ll9k.p1.openshiftapps.com',
+]
 
 
 # Application definition
