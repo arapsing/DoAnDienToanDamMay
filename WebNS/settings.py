@@ -29,6 +29,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'do-an-dien-toan-dam-may-git-crt-20110233-dev.apps.sandbox-m2.ll9k.p1.openshiftapps.com',
+    '127.0.0.1',
 ]
 
 
