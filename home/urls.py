@@ -1,8 +1,6 @@
-from os import stat
-from xml.dom.minidom import Document
+
 from django import views
-from django.contrib import admin
-from django.urls import path, include
+from django.urls import path
 from . import views
 
 ##t

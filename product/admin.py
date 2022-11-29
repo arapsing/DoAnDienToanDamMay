@@ -1,5 +1,4 @@
-from itertools import product
-from unicodedata import category
+
 from django.contrib import admin
 
 from product.models import Category, Product, Comment
