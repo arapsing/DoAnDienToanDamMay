@@ -41,14 +41,14 @@
 
     <div class="boxcomment">
         <hr>
-        <h2>Bình luận</h2>
+        <h2>Comment</h2>
         <br/>
 
         <div class="comment">
             <form action="" method="POST">
                 {% csrf_token %} {{cmt}}
                 <button class="bt_com center" type="submit">
-                        Đăng
+                        POST
                     </button>
             </form>
         </div>
