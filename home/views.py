@@ -14,14 +14,14 @@ from django.conf import settings
 from django.contrib import auth
 
 
-##khanh code
+
 def HomePage(request):
     return render(request, 'home/home.html') 
-#Loc code
+
 def IntroPage(request):
     return render(request, 'home/info.html')
 
-### Khanh code
+
 class Store(LoginRequiredMixin, View):
     login_url = '/login/'
     def get(self, request, category_slug = None):
@@ -42,7 +42,7 @@ class Store(LoginRequiredMixin, View):
 	    }
         return render(request, 'home/store.html',context)
 
-##khanhcode
+
 @decorators.login_required(login_url = '/login/')
 
 def product_detail(request, category_slug, product_slug):
@@ -50,7 +50,7 @@ def product_detail(request, category_slug, product_slug):
     product  =  get_object_or_404(product_models, slug=product_slug)
     cart_product_form = CartAddProductForm()
 
-    #loc code
+  
     cmt = CommentForm(request.POST or None)
     if  request.method == "POST":
         if cmt.is_valid():
@@ -66,14 +66,14 @@ def product_detail(request, category_slug, product_slug):
         'category':category,
         'product':product,
         'cart_product_form': cart_product_form,
-        #loc code
+      
         'cmt': cmt,
         'list_Comments': list_Comment,
-        #
+        
     }
     return render(request, 'home/product_detail.html', context=context)
 
-### khánh code
+
 def search(request):
     if 'q' in request.GET:
         q = request.GET.get('q')
@@ -92,38 +92,38 @@ def search(request):
 
 
 
-## QUAN code
+
 def get_home(request):
     return render(request,'Fanpage/home.html')
-##QUAN CODE + AN CODE
+
 def register(request):
-    ##Quan code
+
     form=RegistrationForm()
     if request.method=='POST':
         form=RegistrationForm(request.POST)
         if form.is_valid():
             form.save()
-    ##An code
-            email=request.POST.get('email')
-            name=request.POST.get('username')
-            password=request.POST.get('password1')
-            message=("Hello user "+"'"+name+"'"+"\n"
-                     +"Your password is : "+"'"+password+"'"
-                     +"\n"+"Access to this link to continue log in: http://127.0.0.1:8000/login/"
-                    )
 
-            send_mail('Verified mail from cửa hàng nông sản',
-                message,
-                settings.EMAIL_HOST_USER,
-                [email],
-                fail_silently=False
-            )
+            # email=request.POST.get('email')
+            # name=request.POST.get('username')
+            # password=request.POST.get('password1')
+            # message=("Hello user "+"'"+name+"'"+"\n"
+            #          +"Your password is : "+"'"+password+"'"
+            #          +"\n"+"Access to this link to continue log in: https://do-an-dien-toan-dam-may-git-crt-20110233-dev.apps.sandbox-m2.ll9k.p1.openshiftapps.com/login/"
+            #         )
+
+            # send_mail('Verified mail from cửa hàng nông sản',
+            #     message,
+            #     settings.EMAIL_HOST_USER,
+            #     [email],
+            #     fail_silently=False
+            # )
 
             #----------------------------------------------
             return render(request,'home/home.html')
     return render(request,'login-out-register/register.html',{'form':form})
 
-## quan code
+
 class loginUser(View):
     def get(selt,request):
         lf=LoginForm
@@ -145,7 +145,7 @@ class loginUser(View):
         else:
             return HttpResponse('login failed')
 
-## an code
+
 @login_required(login_url="login") # Hàm Django hỗ trợ để chắc chắn phải login trước rồi mới logout được
 def logoutUser(request):
     auth.logout(request)
@@ -155,6 +155,6 @@ def logoutUser(request):
 def checkOut(request):
     return render(request, 'home/checkout.html')
 
-#Loc--Code
+
 def conTact(request):
     return render(request,'home/contact.html')
