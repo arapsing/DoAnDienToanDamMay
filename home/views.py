@@ -103,7 +103,6 @@ def register(request):
         form=RegistrationForm(request.POST)
         if form.is_valid():
             form.save()
-
             # email=request.POST.get('email')
             # name=request.POST.get('username')
             # password=request.POST.get('password1')

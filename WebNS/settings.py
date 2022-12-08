@@ -29,17 +29,19 @@ DEBUG = True
 
 
 CSRF_TRUSTED_ORIGINS = [
-    'http://127.0.0.1:8000',
-    'https://do-an-dien-toan-dam-may-git-crt-20110233-dev.apps.sandbox-m2.ll9k.p1.openshiftapps.com',
+    'https://*.apps.sandbox-m2.ll9k.p1.openshiftapps.com',
+    # 'https://do-an-dien-toan-dam-may-git-crt-20110233-dev.apps.sandbox-m2.ll9k.p1.openshiftapps.com',
 
 ]
 ALLOWED_HOSTS = [
-    'do-an-dien-toan-dam-may-git-crt-20110233-dev.apps.sandbox-m2.ll9k.p1.openshiftapps.com',
-    '127.0.0.1',
+    '*',
+    '*.apps.sandbox-m2.ll9k.p1.openshiftapps.com',
+    # 'do-an-dien-toan-dam-may-git-crt-20110233-dev.apps.sandbox-m2.ll9k.p1.openshiftapps.com',
 ]
 CORS_ORIGIN_WHITELIST = [
-    'http://127.0.0.1:8000',
-    'https://do-an-dien-toan-dam-may-git-crt-20110233-dev.apps.sandbox-m2.ll9k.p1.openshiftapps.com',
+    '*',
+    '*.apps.sandbox-m2.ll9k.p1.openshiftapps.com',
+    # 'https://do-an-dien-toan-dam-may-git-crt-20110233-dev.apps.sandbox-m2.ll9k.p1.openshiftapps.com',
 ]
 
 
@@ -57,7 +59,7 @@ INSTALLED_APPS = [
     'order',
     'user',
     'cart',
-    'home',
+    'home',  
 ]
 
 MIDDLEWARE = [
